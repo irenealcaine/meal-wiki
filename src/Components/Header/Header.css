@@ -1,7 +1,26 @@
 .header{
-  background-color: #fff2;
+  background-color: #00f2;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+  padding: 5px 20px;
+
+  .logo{
+    height: 100%;
+    width: auto;
+  }
+
+  nav{
+    ul{
+      display: flex;
+      gap:15px
+    }
+  }
 }
