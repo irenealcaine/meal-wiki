@@ -1,9 +1,57 @@
+@import url('./variables.css');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&display=swap');
+
 *{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+body{
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+p, a, li{
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+}
+
+h1,h2,h3,h4{
+  font-family: "Patrick Hand", cursive;
+}
+
+h1{
+  font-size: 70px;
+}
+
+h2{
+  font-size: 45px;
+}
+
+h3{
+  font-size: 30px;
+}
+
 ul{
   list-style: none;
+}
+
+
+@media screen and (max-width: 768px) {
+  p, a{
+    font-size: 16px;
+  }
+
+  h1{
+    font-size: 45px;
+  }
+
+  h2{
+    font-size: 30px;
+  }
+
+  h3{
+    font-size: 20px;
+  }
 }
