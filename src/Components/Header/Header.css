@@ -1,5 +1,6 @@
+@import url('../../variables.css');
+
 .header{
-  background-color: #00f2;
   position: absolute;
   top: 0;
   left: 0;
@@ -9,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
 
-  height: 50px;
+  height: var(--header-height);
   padding: 5px 20px;
 
   .logo{

@@ -1,0 +1,7 @@
+@import url('../../variables.css');
+
+.layout{
+  .content{
+    padding: calc(var(--header-height) + 10px) 10px 50px 10px;
+  }
+}
