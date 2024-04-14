@@ -10,7 +10,7 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => {
         setMeal(data.meals[0]);
-        console.log(meal)
+        // console.log(meal)
       });
   }, [])
 
