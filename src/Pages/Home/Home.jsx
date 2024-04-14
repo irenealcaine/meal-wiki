@@ -1,3 +1,4 @@
+import './Home.css'
 import React, { useEffect, useState } from 'react'
 import { requests } from '../../Utils/constants';
 
@@ -16,7 +17,7 @@ const Home = () => {
 
 
   return (
-    <div>
+    <div className='home'>
       <h1>Home</h1>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio quas asperiores quisquam perferendis? Magnam quae consectetur quia sint et deserunt qui. Distinctio ratione deleniti voluptate qui nesciunt dolor in soluta?</p>
       <h2>A random meal you may like</h2>
