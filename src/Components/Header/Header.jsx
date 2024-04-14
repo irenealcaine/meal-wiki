@@ -2,10 +2,11 @@ import './Header.css'
 import React from 'react'
 
 import logo from '../../assets/images/logo512.png'
+import { navItems } from '../../Utils/constants'
+import { Link } from 'react-router-dom'
 
 const Header = () => {
 
-  const navItems = ['Categories', 'Ingredients', 'Zones']
 
   return (
     <header className='header'>
@@ -13,7 +14,9 @@ const Header = () => {
       <nav>
         <ul>
           {navItems.map((navItem) => (
-            <li key={navItem}>{navItem}</li>
+            <li key={navItem.name}>
+              <Link to={navItem.to}>{navItem.name}</Link>
+            </li>
           ))}
         </ul>
       </nav>

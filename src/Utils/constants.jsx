@@ -8,3 +8,18 @@ export const requests = {
   filterByCategory: 'www.themealdb.com/api/json/v1/1/filter.php?c=',
   filterByArea: 'www.themealdb.com/api/json/v1/1/filter.php?a=',
 }
+
+export const navItems = [
+  {
+    name: 'Categories',
+    to: '/categories'
+  },
+  {
+    name: 'Ingredients',
+    to: '/ingredients'
+  },
+  {
+    name: 'Zones',
+    to: '/zones'
+  }
+]
