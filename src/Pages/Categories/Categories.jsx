@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { requests } from '../../Utils/constants';
+import { Link } from 'react-router-dom';
 
 const Categories = () => {
 
@@ -10,7 +11,7 @@ const Categories = () => {
       .then((res) => res.json())
       .then((data) => {
         setCategories(data.categories);
-        console.log(categories)
+        // console.log(categories)
       });
   }, [])
 
@@ -18,11 +19,11 @@ const Categories = () => {
     <div>
       <h1>Categories</h1>
       {categories.map((category) => (
-        <div key={category.idCategory}>
+        <Link key={category.idCategory} to={`/categories/${category.strCategory}`}>
           <h2>{category.strCategory}</h2>
           <img src={category.strCategoryThumb} alt="" />
           <p>{category.strCategoryDescription}</p>
-        </div>
+        </Link>
       ))}
     </div>
   )
