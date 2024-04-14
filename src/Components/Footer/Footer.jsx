@@ -1,15 +1,12 @@
-import './Header.css'
+import './Footer.css'
 import React from 'react'
 
-import logo from '../../assets/images/logo512.png'
-
-const Header = () => {
+const Footer = () => {
 
   const navItems = ['Categories', 'Ingredients', 'Zones']
 
   return (
-    <header className='header'>
-      <img src={logo} alt="logo" className='logo' />
+    <footer className='footer'>
       <nav>
         <ul>
           {navItems.map((navItem) => (
@@ -17,8 +14,8 @@ const Header = () => {
           ))}
         </ul>
       </nav>
-    </header>
+    </footer>
   )
 }
 
-export default Header
+export default Footer
