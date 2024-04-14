@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header className='header'>
-      <img src={logo} alt="logo" className='logo' />
+      <Link to={'/'}><img src={logo} alt="logo" className='logo' /></Link>
       <nav>
         <ul>
           {navItems.map((navItem) => (
