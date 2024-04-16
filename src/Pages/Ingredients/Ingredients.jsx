@@ -21,6 +21,7 @@ const Ingredients = () => {
       {ingredients.map((ingredient) => (
         <Link key={ingredient.idIngredient} to={`/ingredients/${ingredient.strIngredient}`}>
           <h2>{ingredient.strIngredient}</h2>
+          <img src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`} alt={ingredient.strIngredient} />
           <p>{ingredient.strDescription}</p>
         </Link>
 

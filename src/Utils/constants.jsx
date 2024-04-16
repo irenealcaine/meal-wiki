@@ -20,7 +20,7 @@ export const navItems = [
     to: '/ingredients'
   },
   {
-    name: 'Zones',
-    to: '/zones'
+    name: 'Areas',
+    to: '/areas'
   }
 ]

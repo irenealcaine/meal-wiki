@@ -8,6 +8,7 @@ import Categories from './Pages/Categories/Categories';
 import CategoryList from './Pages/CategoryList/CategoryList';
 import Ingredients from './Pages/Ingredients/Ingredients';
 import IngredientList from './Pages/IngredientList/IngredientList';
+import Areas from './Pages/Areas/Areas';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/categories/:category" element={<CategoryList />} />
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/ingredients/:ingredient" element={<IngredientList />} />
+            <Route path="/areas" element={<Areas />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
