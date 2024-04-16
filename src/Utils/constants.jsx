@@ -5,6 +5,7 @@ export const requests = {
   mealDetailsById: 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=',
   mealCategories: 'https://www.themealdb.com/api/json/v1/1/categories.php',
   mealIngredients: 'https://www.themealdb.com/api/json/v1/1/list.php?i=list',
+  mealAreas: 'https://www.themealdb.com/api/json/v1/1/list.php?a=list',
   filterByMainIngredient: 'https://www.themealdb.com/api/json/v1/1/filter.php?i=',
   filterByCategory: 'https://www.themealdb.com/api/json/v1/1/filter.php?c=',
   filterByArea: 'https://www.themealdb.com/api/json/v1/1/filter.php?a=',
