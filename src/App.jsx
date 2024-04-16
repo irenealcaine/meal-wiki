@@ -6,6 +6,8 @@ import Layout from './Components/Layout/Layout';
 import NotFound from './Pages/NotFound/NotFound';
 import Categories from './Pages/Categories/Categories';
 import CategoryList from './Pages/CategoryList/CategoryList';
+import Ingredients from './Pages/Ingredients/Ingredients';
+import IngredientList from './Pages/IngredientList/IngredientList';
 
 function App() {
 
@@ -17,6 +19,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/categories/:category" element={<CategoryList />} />
+            <Route path="/ingredients" element={<Ingredients />} />
+            <Route path="/ingredients/:ingredient" element={<IngredientList />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
