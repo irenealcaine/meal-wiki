@@ -21,10 +21,10 @@ const CategoryList = () => {
     <div>
       <h1>{category}</h1>
       {categoryList.map((categoryItem) => (
-        <div key={categoryItem.idMeal}>
+        <Link key={categoryItem.idMeal} to={`/${categoryItem.idMeal}`}>
           <h2>{categoryItem.strMeal}</h2>
           <img src={categoryItem.strMealThumb} alt={categoryItem.strMeal} />
-        </div>
+        </Link>
       ))}
     </div>
   )

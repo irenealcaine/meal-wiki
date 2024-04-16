@@ -23,10 +23,10 @@ const IngredientList = () => {
     <div>
       <h1>{ingredient}</h1>
       {ingredientList.map((ingredientItem) => (
-        <div key={ingredientItem.idMeal}>
+        <Link key={ingredientItem.idMeal} to={`/${ingredientItem.idMeal}`}>
           <h2>{ingredientItem.strMeal}</h2>
           <img src={ingredientItem.strMealThumb} alt={ingredientItem.strMeal} />
-        </div>
+        </Link>
       ))}
     </div>
   )

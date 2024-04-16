@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { requests } from '../../Utils/constants'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 const AreaList = () => {
 
@@ -21,10 +21,10 @@ const AreaList = () => {
     <div>
       <h1>{area}</h1>
       {areaList.map((areaItem) => (
-        <div key={areaItem.idMeal}>
+        <Link key={areaItem.idMeal} to={`/${areaItem.idMeal}`}>
           <h2>{areaItem.strMeal}</h2>
           <img src={areaItem.strMealThumb} alt={areaItem.strMeal} />
-        </div>
+        </Link>
       ))}
     </div>
   )
