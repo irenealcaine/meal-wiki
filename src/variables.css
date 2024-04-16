@@ -1,6 +1,9 @@
 :root{
-  --light:#ddd;
-  --dark:#333;
+  --light:#FFF8E8;
+  --dark:#463F3A;
+  --main:#405700;
+  --secondary:#ff4524;
+  --terciary: #fcb526;
 
   --header-height:50px
 }
