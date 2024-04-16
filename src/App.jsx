@@ -10,6 +10,7 @@ import Ingredients from './Pages/Ingredients/Ingredients';
 import IngredientList from './Pages/IngredientList/IngredientList';
 import Areas from './Pages/Areas/Areas';
 import AreaList from './Pages/AreaList/AreaList';
+import MealDetails from './Pages/MealDetails/MealDetails';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/:idMeal" element={<MealDetails />} />
             <Route path="/categories" element={<Categories />} />
             <Route path="/categories/:category" element={<CategoryList />} />
             <Route path="/ingredients" element={<Ingredients />} />
