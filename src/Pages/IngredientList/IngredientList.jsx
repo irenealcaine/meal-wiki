@@ -10,6 +10,7 @@ const IngredientList = () => {
   const { ingredient } = useParams()
 
   const [ingredientList, setIngredientList] = useState([])
+  const [ingredientDescription, setIngredientDescription] = useState('')
 
   useEffect(() => {
     fetch(`${requests.filterByMainIngredient}${ingredient}`)
@@ -18,12 +19,19 @@ const IngredientList = () => {
         setIngredientList(data.meals);
         // console.log(data)
       });
+    fetch(`${requests.mealIngredients}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const ingredientJson = data.meals.filter(ingredientItem => ingredientItem.strIngredient == ingredient)
+        setIngredientDescription(ingredientJson[0].strDescription);
+      });
   }, [])
 
 
   return (
     <div>
       <h1>{ingredient}</h1>
+      <p>{ingredientDescription}</p>
       <GridContainer>
         {ingredientList.map((ingredientItem) => (
           <Link key={ingredientItem.idMeal} to={`/${ingredientItem.idMeal}`}>

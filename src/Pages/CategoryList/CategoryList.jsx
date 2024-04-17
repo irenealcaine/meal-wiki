@@ -9,19 +9,26 @@ const CategoryList = () => {
   const { category } = useParams()
 
   const [categoryList, setCategoryList] = useState([])
+  const [categoryDescription, setCategoryDescription] = useState('')
 
   useEffect(() => {
     fetch(`${requests.filterByCategory}${category}`)
       .then((res) => res.json())
       .then((data) => {
         setCategoryList(data.meals);
-        // console.log(data)
+      });
+    fetch(`${requests.mealCategories}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const categoryJson = data.categories.filter(categoryItem => categoryItem.strCategory == category)
+        setCategoryDescription(categoryJson[0].strCategoryDescription);
       });
   }, [])
 
   return (
     <div>
       <h1>{category}</h1>
+      <p>{categoryDescription}</p>
       <GridContainer>
         {categoryList.map((categoryItem) => (
           <Link key={categoryItem.idMeal} to={`/${categoryItem.idMeal}`}>
