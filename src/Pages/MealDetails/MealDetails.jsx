@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { requests } from '../../Utils/constants'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 const MealDetails = () => {
 
@@ -25,7 +25,7 @@ const MealDetails = () => {
       if (ingredient && measure) {
         ingredientsList.push(
           <li key={i} className={`ingredient`}>
-            {measure} {ingredient}
+            {ingredient} - {measure}
           </li>,
         );
       }
@@ -38,11 +38,13 @@ const MealDetails = () => {
     <div>
       <h1>{meal.strMeal}</h1>
       <img src={meal.strMealThumb} alt={meal.strMeal} />
-      <p>{meal.strArea}</p>
-      <p>{meal.strCategory}</p>
-      <hr />
-      <ul className="drink-ingredients">{renderIngredientList()}</ul>
-      <hr />
+      <div>
+        <p>Area: <Link to={`/area/${meal.strArea}`}>{meal.strArea}</Link></p>
+        <p>Category: <Link to={`/categories/${meal.strCategory}`}>{meal.strCategory}</Link></p>
+      </div>
+
+      <ul className="ingredients-list">{renderIngredientList()}</ul>
+
       <p>{meal.strInstructions}</p>
       <p>{meal.strTags}</p>
       <a href={meal.strSource}>Source</a>
