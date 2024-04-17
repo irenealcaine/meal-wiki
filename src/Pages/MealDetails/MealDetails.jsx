@@ -25,7 +25,7 @@ const MealDetails = () => {
       if (ingredient && measure) {
         ingredientsList.push(
           <li key={i} className={`ingredient`}>
-            {ingredient} - {measure}
+            {measure} {ingredient}
           </li>,
         );
       }
