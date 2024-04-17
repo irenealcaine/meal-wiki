@@ -39,7 +39,7 @@ const MealDetails = () => {
       <h1>{meal.strMeal}</h1>
       <img src={meal.strMealThumb} alt={meal.strMeal} />
       <div>
-        <p>Area: <Link to={`/area/${meal.strArea}`}>{meal.strArea}</Link></p>
+        <p>Area: <Link to={`/areas/${meal.strArea}`}>{meal.strArea}</Link></p>
         <p>Category: <Link to={`/categories/${meal.strCategory}`}>{meal.strCategory}</Link></p>
       </div>
 

@@ -26,7 +26,7 @@ function App() {
             <Route path="/ingredients" element={<Ingredients />} />
             <Route path="/ingredients/:ingredient" element={<IngredientList />} />
             <Route path="/areas" element={<Areas />} />
-            <Route path="/area/:area" element={<AreaList />} />
+            <Route path="/areas/:area" element={<AreaList />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>

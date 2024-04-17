@@ -19,7 +19,7 @@ const Areas = () => {
     <div>
       <h1>Areas</h1>
       {areas.map((area) => (
-        <Link key={area.strArea} to={`/area/${area.strArea}`}>
+        <Link key={area.strArea} to={`/areas/${area.strArea}`}>
           <h2>{area.strArea}</h2>
         </Link>
       ))}
