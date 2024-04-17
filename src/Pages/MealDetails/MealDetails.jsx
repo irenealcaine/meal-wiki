@@ -25,7 +25,7 @@ const MealDetails = () => {
       if (ingredient && measure) {
         ingredientsList.push(
           <li key={i} className={`ingredient`}>
-            {measure} {ingredient}
+            {measure} <Link to={`/ingredients/${ingredient}`}>{ingredient}</Link>
           </li>,
         );
       }
