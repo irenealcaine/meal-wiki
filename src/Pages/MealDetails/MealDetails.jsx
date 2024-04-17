@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './MealDetails.css'
 import { requests } from '../../Utils/constants'
 import { Link, useParams } from 'react-router-dom'
 
@@ -35,20 +36,29 @@ const MealDetails = () => {
 
 
   return (
-    <div>
-      <h1>{meal.strMeal}</h1>
-      <img src={meal.strMealThumb} alt={meal.strMeal} />
-      <div>
-        <p>Area: <Link to={`/areas/${meal.strArea}`}>{meal.strArea}</Link></p>
-        <p>Category: <Link to={`/categories/${meal.strCategory}`}>{meal.strCategory}</Link></p>
+    <div className='meal-details'>
+      <div className='meal-principal'>
+        <h1>{meal.strMeal}</h1>
+        <img src={meal.strMealThumb} alt={meal.strMeal} />
       </div>
 
-      <ul className="ingredients-list">{renderIngredientList()}</ul>
+      <div className='meal-aside'>
+        <div className='meal-info'>
+          <p>Area: <Link to={`/areas/${meal.strArea}`}>{meal.strArea}</Link></p>
+          <p>Category: <Link to={`/categories/${meal.strCategory}`}>{meal.strCategory}</Link></p>
+        </div>
 
-      <p>{meal.strInstructions}</p>
-      <p>{meal.strTags}</p>
-      <a href={meal.strSource}>Source</a>
-      <a href={meal.strYoutube}>Youtube video</a>
+        <ul className="ingredients-list">{renderIngredientList()}</ul>
+
+        <p className='meal-instructions'>{meal.strInstructions}</p>
+        {/* <p>{meal.strTags}</p> */}
+        <div className='meal-source'>
+          <a href={meal.strSource}>Source</a>
+          <a href={meal.strYoutube}>Youtube video</a>
+        </div>
+
+      </div>
+
     </div>
   )
 }
