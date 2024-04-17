@@ -22,7 +22,7 @@ const AreaList = () => {
   return (
     <div>
       <h1>{area}</h1>
-      <GridContainer>
+      <GridContainer columns={3}>
         {areaList.map((areaItem) => (
           <Link key={areaItem.idMeal} to={`/${areaItem.idMeal}`}>
             <GridItem>

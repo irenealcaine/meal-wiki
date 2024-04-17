@@ -20,8 +20,8 @@ const Ingredients = () => {
   return (
     <div>
       <h1>Ingredients</h1>
-      <GridContainer>
-        {ingredients.map((ingredient) => (
+      <GridContainer columns={4}>
+        {ingredients.slice(0, 50).map((ingredient) => (
           <Link key={ingredient.idIngredient} to={`/ingredients/${ingredient.strIngredient}`}>
             <GridItem>
               <h2>{ingredient.strIngredient}</h2>

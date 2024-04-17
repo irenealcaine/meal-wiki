@@ -32,7 +32,7 @@ const IngredientList = () => {
     <div>
       <h1>{ingredient}</h1>
       <p>{ingredientDescription}</p>
-      <GridContainer>
+      <GridContainer columns={3}>
         {ingredientList.map((ingredientItem) => (
           <Link key={ingredientItem.idMeal} to={`/${ingredientItem.idMeal}`}>
             <GridItem>
