@@ -1,13 +1,13 @@
 .grid-container{
   display: grid;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: masonry;
   gap: 20px;
 }
 
 @media screen and (max-width: 768px) {
   .grid-container{
-  gap: 10px;
-
+    gap: 10px;
     grid-template-columns: repeat(2,1fr);
   }
 }

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { requests } from '../../Utils/constants'
 import { useParams, Link } from 'react-router-dom'
+import GridContainer from '../../Components/Layout/Grid/GridContainer'
+import GridItem from '../../Components/Layout/Grid/GridItem'
 
 const AreaList = () => {
 
@@ -20,12 +22,16 @@ const AreaList = () => {
   return (
     <div>
       <h1>{area}</h1>
-      {areaList.map((areaItem) => (
-        <Link key={areaItem.idMeal} to={`/${areaItem.idMeal}`}>
-          <h2>{areaItem.strMeal}</h2>
-          <img src={areaItem.strMealThumb} alt={areaItem.strMeal} />
-        </Link>
-      ))}
+      <GridContainer>
+        {areaList.map((areaItem) => (
+          <Link key={areaItem.idMeal} to={`/${areaItem.idMeal}`}>
+            <GridItem>
+              <h2>{areaItem.strMeal}</h2>
+              <img src={areaItem.strMealThumb} alt={areaItem.strMeal} />
+            </GridItem>
+          </Link>
+        ))}
+      </GridContainer>
     </div>
   )
 }

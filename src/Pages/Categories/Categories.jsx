@@ -22,13 +22,13 @@ const Categories = () => {
       <h1>Categories</h1>
       <GridContainer>
         {categories.map((category) => (
-          <GridItem key={category.idCategory}>
-            <Link to={`/categories/${category.strCategory}`}>
+          <Link key={category.idCategory} to={`/categories/${category.strCategory}`}>
+            <GridItem>
               <h2>{category.strCategory}</h2>
               <img src={category.strCategoryThumb} alt={category.strCategory} />
               {/* <p>{category.strCategoryDescription}</p> */}
-            </Link>
-          </GridItem>
+            </GridItem>
+          </Link>
         ))}
       </GridContainer>
     </div>
