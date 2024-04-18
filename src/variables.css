@@ -1,10 +1,12 @@
 :root{
-  --light:#fffbf2;
-  --dark:#292725;
-  --main:#afe715;
-  --main-transparent:#afe71566;
-  --secondary:#ff6246;
-  --terciary: #fcb526;
+  --light:#fff7e6;
+  --dark:#3b2814;
+  --main:#6c8b15;
+  --main-transparent:#6c8b1566;
+  --secondary:#afe715;
+  --secondary-transparent:#afe715;
+  /* --secondary:#ff6246;
+  --terciary: #fcb526; */
 
   --header-height:50px
 }

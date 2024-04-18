@@ -10,21 +10,26 @@
   justify-content: space-between;
   align-items: center;
 
+  background-color: var(--main);
   height: var(--header-height);
   padding: 5px 20px;
+
+  font-weight: bold;
+  color: var(--light);
 
   a{
     height: 100%;
     .logo{
       height: 100%;
       width: auto;
+      border-radius: 0px;
     }
   }
 
   nav{
     ul{
       display: flex;
-      gap:15px;
+      gap:20px;
 
       li{
         position: relative;
@@ -35,8 +40,8 @@
           bottom: 0;
           left: 0;
           width: 0%;
-          height: 2px;
-          background-color: var(--main);
+          height: 3px;
+          background-color: var(--secondary);
           transition: all .2s ease;
 
         }
