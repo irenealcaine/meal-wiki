@@ -48,8 +48,10 @@ const MealDetails = () => {
           <p>Category: <Link to={`/categories/${meal.strCategory}`}>{meal.strCategory}</Link></p>
         </div>
 
+        <h2>Ingredients</h2>
         <ul className="ingredients-list">{renderIngredientList()}</ul>
 
+        <h2>Instructions</h2>
         <p className='meal-instructions'>{meal.strInstructions}</p>
         {/* <p>{meal.strTags}</p> */}
         <div className='meal-source'>
