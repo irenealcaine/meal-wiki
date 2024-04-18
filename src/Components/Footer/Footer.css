@@ -13,7 +13,21 @@
     ul{
       display: flex;
       justify-content: end;
-      gap:15px
+      gap:20px;
+
+      li{
+        color: var(--main);
+        transition: var(--transition);
+
+        &:hover{
+          color: var(--dark);
+          filter: drop-shadow(0 0 2px var(--main));
+        }
+
+        svg{
+          font-size: 25px;
+        }
+      }
     }
   }
 }

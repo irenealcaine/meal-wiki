@@ -1,3 +1,6 @@
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
+import { IoMailOutline } from "react-icons/io5";
+
 export const requests = {
   randomMeal: 'https://www.themealdb.com/api/json/v1/1/random.php',
 
@@ -28,4 +31,20 @@ export const navItems = [
     name: 'Areas',
     to: '/areas'
   }
+]
+
+export const socialMedia = [
+  {
+    name: 'Gmail',
+    logo: <FiMail />,
+    link: 'gmail.com'
+  }, {
+    name: 'LinkedIn',
+    logo: <FiLinkedin />,
+    link: 'linkedin.com'
+  }, {
+    name: 'GitHub',
+    logo: <FiGithub />,
+    link: 'github.com'
+  },
 ]
