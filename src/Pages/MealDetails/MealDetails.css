@@ -11,6 +11,8 @@
   }
 
   .meal-aside{
+    margin-top: 20px;
+
     .meal-info{
       display: flex;
       justify-content: center;
@@ -36,8 +38,8 @@
       justify-content: flex-start;
       align-items: center;
       column-gap: 50px;
-      row-gap: 20px;
-      width: 60%;
+      row-gap: 15px;
+      width: 90%;
       margin: 20px auto;
 
       border: 2px solid var(--main);
@@ -73,7 +75,7 @@
     }
 
     .meal-instructions{
-      width: 60%;
+      width: 90%;
       margin: 20px auto;
       background-color: var(--secondary-transparent);
       padding: 15px 50px;
@@ -118,7 +120,6 @@
     }
 
     .meal-aside{
-      margin-top: 20px;
       .meal-info
         {
           flex-direction: column;
