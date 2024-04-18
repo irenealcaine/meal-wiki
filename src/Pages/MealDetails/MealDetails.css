@@ -13,9 +13,15 @@
     gap: 20px;
 
     a{
-      background-color: var(--main-transparent);
-      padding: 5px;
+      background-color: var(--secondary-transparent);
       border-radius: 10px;
+      padding: 5px 10px;
+      font-weight: bold;
+
+      transition: var(--transition);
+      &:hover{
+        background-color: var(--secondary);
+      }
     }
   }
 
@@ -29,23 +35,24 @@
     width: 60%;
     margin: 20px auto;
 
-    border: 2px solid var(--main-transparent);
+    border: 2px solid var(--main);
     padding: 15px 50px;
     border-radius: 10px;
 
     list-style-type: disc;
 
     li::marker {
-      color: var(--main);
+      color: var(--secondary);
     }
   }
 
   .meal-instructions{
     width: 60%;
     margin: 20px auto;
-    background-color: var(--main-transparent);
+    background-color: var(--secondary-transparent);
     padding: 15px 50px;
     border-radius: 10px;
+    text-indent: 20px;
   }
 
   .meal-source{
@@ -55,9 +62,15 @@
     gap: 20px;
 
     a{
-      background-color: var(--main-transparent);
-      padding: 5px;
+      background-color: var(--secondary-transparent);
       border-radius: 10px;
+      padding: 5px 10px;
+      font-weight: bold;
+
+      transition: var(--transition);
+      &:hover{
+        background-color: var(--secondary);
+      }
     }
   }
   }
@@ -71,6 +84,11 @@
     .meal-principal{
       width: 100%;
       min-width: 0px;
+
+      img{
+        margin: 0 auto;
+        display: block;
+      }
     }
 
     .meal-aside{

@@ -4,9 +4,11 @@
   --main:#6c8b15;
   --main-transparent:#6c8b1566;
   --secondary:#afe715;
-  --secondary-transparent:#afe715;
+  --secondary-transparent:#afe71566;
   /* --secondary:#ff6246;
   --terciary: #fcb526; */
 
-  --header-height:50px
+  --header-height:50px;
+
+  --transition: all .2s ease;
 }
