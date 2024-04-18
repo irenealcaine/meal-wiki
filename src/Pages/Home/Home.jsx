@@ -23,7 +23,7 @@ const Home = () => {
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio quas asperiores quisquam perferendis? Magnam quae consectetur quia sint et deserunt qui. Distinctio ratione deleniti voluptate qui nesciunt dolor in soluta?</p>
       <h2>A random meal you may like</h2>
       <Link to={`/${meal.idMeal}`}>
-        <p>{meal?.strMeal}</p>
+        <h3>{meal?.strMeal}</h3>
         <img src={meal?.strMealThumb} alt={meal?.strMeal} />
       </Link>
     </div>
