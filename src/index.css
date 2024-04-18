@@ -50,7 +50,7 @@ ul{
 
 
 @media screen and (max-width: 768px) {
-  p, a{
+  p, a, li{
     font-size: 16px;
   }
 

@@ -3,76 +3,102 @@
 
   .meal-principal{
     min-width: 500px;
+
+    img{
+      border: 2px solid var(--secondary);
+      box-shadow: 2px 2px 5px var(--main);
+    }
   }
 
   .meal-aside{
     .meal-info{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
 
-    a{
-      background-color: var(--secondary-transparent);
-      border-radius: 10px;
-      padding: 5px 10px;
-      font-weight: bold;
+      a{
+        background-color: var(--secondary-transparent);
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-weight: bold;
 
-      transition: var(--transition);
-      &:hover{
-        background-color: var(--secondary);
+        transition: var(--transition);
+        &:hover{
+          background-color: var(--secondary);
+        }
       }
     }
-  }
 
-  .ingredients-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    column-gap: 50px;
-    row-gap: 20px;
-    width: 60%;
-    margin: 20px auto;
+    .ingredients-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 50px;
+      row-gap: 20px;
+      width: 60%;
+      margin: 20px auto;
 
-    border: 2px solid var(--main);
-    padding: 15px 50px;
-    border-radius: 10px;
-
-    list-style-type: disc;
-
-    li::marker {
-      color: var(--secondary);
-    }
-  }
-
-  .meal-instructions{
-    width: 60%;
-    margin: 20px auto;
-    background-color: var(--secondary-transparent);
-    padding: 15px 50px;
-    border-radius: 10px;
-    text-indent: 20px;
-  }
-
-  .meal-source{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-
-    a{
-      background-color: var(--secondary-transparent);
+      border: 2px solid var(--main);
+      padding: 15px 50px;
       border-radius: 10px;
-      padding: 5px 10px;
-      font-weight: bold;
 
-      transition: var(--transition);
-      &:hover{
-        background-color: var(--secondary);
+      list-style-type: disc;
+
+      li::marker {
+        color: var(--secondary);
+      }
+
+      a{
+        position: relative;
+        &::before{
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0%;
+          height: 2px;
+          background-color: var(--secondary);
+          transition: all .2s ease;
+
+        }
+        &:hover{
+          &::before{
+            width: 100%;
+          }
+        }
       }
     }
-  }
+
+    .meal-instructions{
+      width: 60%;
+      margin: 20px auto;
+      background-color: var(--secondary-transparent);
+      padding: 15px 50px;
+      border-radius: 10px;
+      text-indent: 20px;
+    }
+
+    .meal-source{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      a{
+        background-color: var(--secondary-transparent);
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-weight: bold;
+
+        transition: var(--transition);
+        &:hover{
+          background-color: var(--secondary);
+        }
+      }
+    }
   }
 
 }
@@ -93,6 +119,10 @@
 
     .meal-aside{
       margin-top: 20px;
+      .meal-info
+        {
+          flex-direction: column;
+        }
 
       .ingredients-list{
         flex-direction: column;
@@ -110,6 +140,10 @@
       .meal-instructions{
         width: 100%;
         padding: 15px 20px;
+      }
+
+      .meal-source{
+        flex-direction: column;
       }
     }
 
