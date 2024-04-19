@@ -9,6 +9,14 @@
   &.columns-3{
     grid-template-columns: repeat(3, 1fr);
   }
+
+  &:hover > a{
+    transition: var(--transition);
+  }
+
+  &:hover > :not(:hover){
+    opacity: .6;
+  }
 }
 
 @media screen and (max-width: 768px) {

@@ -9,4 +9,17 @@
   justify-content: flex-end;
   align-items: center;
   text-align: center;
+
+  transition: var(--transition);
+
+  &:hover{
+    background-color: var(--secondary-transparent);
+    box-shadow: 2px 2px 5px var(--main);
+
+    h2{
+      text-decoration: underline;
+      text-decoration-color: var(--secondary)
+    }
+  }
+
 }
