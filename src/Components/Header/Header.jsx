@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import logo from '../../assets/images/logo512.png'
 import { navItems } from '../../Utils/constants'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 import { FaHamburger } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
@@ -11,6 +11,7 @@ import { IoClose } from "react-icons/io5";
 const Header = () => {
 
   const [isOpen, setIsOpen] = useState(false)
+  const location = useLocation();
 
   return (
     <header className='header'>
@@ -21,7 +22,7 @@ const Header = () => {
             <Link to={'/'} className={`home-link ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(false)}><img src={logo} alt="logo" className='logo' /></Link>
           </li>
           {navItems.map((navItem) => (
-            <li key={navItem.name}>
+            <li key={navItem.name} className={`${location.pathname === `${navItem.to}` && "active"}`}>
               <Link to={navItem.to} onClick={() => setIsOpen(false)}>{navItem.name}</Link>
             </li>
           ))}
