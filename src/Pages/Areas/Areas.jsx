@@ -3,7 +3,8 @@ import { requests } from '../../Utils/constants';
 import { Link } from 'react-router-dom';
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
-import Spanish from '../../assets/images/flags/Spanish.png'
+
+// https://www.flaticon.com/packs/countrys-flags <-- FLAGS ICONS
 
 const Areas = () => {
 
