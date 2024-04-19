@@ -3,6 +3,7 @@ import { requests } from '../../Utils/constants';
 import { Link } from 'react-router-dom';
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
+import Spanish from '../../assets/images/flags/Spanish.png'
 
 const Areas = () => {
 
@@ -25,6 +26,14 @@ const Areas = () => {
           <Link key={area.strArea} to={`/areas/${area.strArea}`}>
             <GridItem>
               <h2>{area.strArea}</h2>
+              <img
+                src={`/assets/images/flags/${area.strArea}.png`}
+                alt={area.strArea}
+                onError={(e) => {
+                  e.target.onerror = null;
+                  e.target.src = "/assets/images/flags/Unknown.png";
+                }}
+              />
             </GridItem>
           </Link>
         ))}
