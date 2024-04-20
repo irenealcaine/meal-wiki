@@ -1,0 +1,15 @@
+@import url('../../variables.css');
+
+.loader{
+  width: 100%;
+  padding: 20px;
+
+  img{
+    width: 50%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 100rem;
+    border: 3px dashed var(--main);
+  }
+}
