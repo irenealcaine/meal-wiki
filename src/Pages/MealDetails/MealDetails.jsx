@@ -40,7 +40,7 @@ const MealDetails = () => {
     return ingredientsList;
   };
 
-  const instructions = meal?.strInstructions?.split('. ').map((text, index, array) => {
+  const instructions = meal?.strInstructions?.split('.').map((text, index, array) => {
     return index === array.length - 1 ? text : text + ".";
   });
 
