@@ -2,19 +2,25 @@ import React, { useEffect, useState } from 'react'
 import './MealDetails.css'
 import { requests } from '../../Utils/constants'
 import { Link, useParams } from 'react-router-dom'
+import Loader from '../../Components/Loader/Loader'
 
 const MealDetails = () => {
 
   const { idMeal } = useParams()
 
   const [meal, setMeal] = useState([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     fetch(`${requests.mealDetailsById}${idMeal}`)
       .then((res) => res.json())
       .then((data) => {
         setMeal(data.meals[0]);
-        // console.log(meal)
+        setLoading(false)
+      })
+      .catch((error) => {
+        console.log(error)
       });
   }, [])
 
@@ -34,9 +40,13 @@ const MealDetails = () => {
     return ingredientsList;
   };
 
+  const instructions = meal?.strInstructions?.split('. ').map((text, index, array) => {
+    return index === array.length - 1 ? text : text + ".";
+  });
 
   return (
     <div className='meal-details'>
+      {loading && <Loader />}
       <div className='meal-principal'>
         <h1>{meal.strMeal}</h1>
         <img src={meal.strMealThumb} alt={meal.strMeal} />
@@ -52,8 +62,13 @@ const MealDetails = () => {
         <ul className="ingredients-list">{renderIngredientList()}</ul>
 
         <h2>Instructions</h2>
-        <p className='meal-instructions'>{meal.strInstructions}</p>
-        {/* <p>{meal.strTags}</p> */}
+        {/* <p className='meal-instructions'>{meal.strInstructions}</p> */}
+        <div className='meal-instructions'>
+          {instructions?.map((step, index) => (
+            <p key={index}> - {step}</p>
+          ))}
+        </div>
+
         <div className='meal-source'>
           <a href={meal.strSource}>Source</a>
           <a href={meal.strYoutube}>Youtube video</a>
