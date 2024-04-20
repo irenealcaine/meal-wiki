@@ -1,13 +1,13 @@
 @import url('../../variables.css');
 
 .footer{
-  position: relative;
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
 
-  height: var(--header-height);
-  padding: 5px 20px;
+  min-height: var(--header-height);
+  padding:20px;
 
   nav{
     ul{
