@@ -40,7 +40,7 @@ const MealDetails = () => {
     return ingredientsList;
   };
 
-  const instructions = meal?.strInstructions?.split('.').map((text, index, array) => {
+  const instructions = meal?.strInstructions?.split('. ').map((text, index, array) => {
     return index === array.length - 1 ? text : text + ".";
   });
 
@@ -50,6 +50,10 @@ const MealDetails = () => {
       <div className='meal-principal'>
         <h1>{meal.strMeal}</h1>
         <img src={meal.strMealThumb} alt={meal.strMeal} />
+        <div className='meal-source top'>
+          <a href={meal.strSource}>Source</a>
+          <a href={meal.strYoutube}>Youtube video</a>
+        </div>
       </div>
 
       <div className='meal-aside'>
@@ -69,7 +73,7 @@ const MealDetails = () => {
           ))}
         </div>
 
-        <div className='meal-source'>
+        <div className='meal-source bottom'>
           <a href={meal.strSource}>Source</a>
           <a href={meal.strYoutube}>Youtube video</a>
         </div>
