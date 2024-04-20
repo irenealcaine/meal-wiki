@@ -3,6 +3,7 @@ import { requests } from '../../Utils/constants';
 import { Link, useParams } from 'react-router-dom'
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
+import Loader from '../../Components/Loader/Loader';
 
 const CategoryList = () => {
 
@@ -10,18 +11,24 @@ const CategoryList = () => {
 
   const [categoryList, setCategoryList] = useState([])
   const [categoryDescription, setCategoryDescription] = useState('')
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     fetch(`${requests.filterByCategory}${category}`)
       .then((res) => res.json())
       .then((data) => {
         setCategoryList(data.meals);
+        setLoading(false)
       });
     fetch(`${requests.mealCategories}`)
       .then((res) => res.json())
       .then((data) => {
         const categoryJson = data.categories.filter(categoryItem => categoryItem.strCategory == category)
         setCategoryDescription(categoryJson[0].strCategoryDescription);
+      })
+      .catch((error) => {
+        console.log(error)
       });
   }, [])
 
@@ -29,6 +36,7 @@ const CategoryList = () => {
     <div>
       <h1>{category}</h1>
       <p>{categoryDescription}</p>
+      {loading && <Loader />}
       <GridContainer columns={3}>
         {categoryList.map((categoryItem) => (
           <Link key={categoryItem.idMeal} to={`/${categoryItem.idMeal}`}>
