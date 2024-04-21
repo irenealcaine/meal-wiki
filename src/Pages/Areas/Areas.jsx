@@ -31,8 +31,7 @@ const Areas = () => {
       <h1>Areas</h1>
 
       <Description>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, obcaecati! Dicta ipsa sit quam officiis placeat, qui minima. Distinctio eveniet totam excepturi recusandae illum aut porro doloribus itaque id reprehenderit?
-          Saepe porro voluptatum incidunt laborum, ipsa esse consequatur ab! Odio rem, fuga autem porro deserunt sit dolorum quibusdam natus ex consequuntur quo tempore laborum quaerat error in similique distinctio vero?</p>
+        <p>Looking to explore different culinary regions through your cooking? Start your journey with robust <Link to={`/areas/American`}>American</Link> dishes, sail across to <Link to={`/areas/Italian`}>Italy</Link> for a pasta or risotto night, and then venture to <Link to={`/areas/Japanese`}>Japan</Link> for some exquisite sushi or ramen. Don’t forget to tour the wonderful flavors of <Link to={`/areas/Spanish`}>Spain</Link> with a traditional paella, and if you're feeling adventurous, give <Link to={`/areas/British`}>British</Link> cuisine a try with some classic fish and chips or a hearty pie. We have recipes and ingredients from all over the globe to satisfy every palate! Plus, there's even a section dedicated to international miscellany for the curious chef.</p>
       </Description>
 
       {loading && <Loader />}
