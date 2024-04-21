@@ -29,8 +29,7 @@ const Ingredients = () => {
       <h1>Ingredients</h1>
 
       <Description>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, obcaecati! Dicta ipsa sit quam officiis placeat, qui minima. Distinctio eveniet totam excepturi recusandae illum aut porro doloribus itaque id reprehenderit?
-          Saepe porro voluptatum incidunt laborum, ipsa esse consequatur ab! Odio rem, fuga autem porro deserunt sit dolorum quibusdam natus ex consequuntur quo tempore laborum quaerat error in similique distinctio vero?</p>
+        <p>Are you trying to pinpoint specific ingredients for your next culinary creation? Start off with essentials like <Link to={'/ingredients/Onion'}>onions</Link>, move on to a hearty course with <Link to={'/ingredients/Beef'}>beef</Link>, and add a finishing touch with <Link to={'/ingredients/Avocado'}>avocado</Link> in your salads or <Link to={'/ingredients/Rice'}>rice</Link> as a side. If you're into poultry, consider incorporating <Link to={'/ingredients/Eggs'}>eggs</Link> into your dishes, or if you are a fan of vegetarian options, experiment with diverse recipes using <Link to={'/ingredients/Potatoes'}>potatoes</Link>. We cater to all preferences! Additionally, our pantry section includes a variety of other essential ingredients to spice up any meal.</p>
       </Description>
 
       {loading && <Loader />}
