@@ -30,8 +30,7 @@ const Categories = () => {
       <h1>Categories</h1>
 
       <Description>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, obcaecati! Dicta ipsa sit quam officiis placeat, qui minima. Distinctio eveniet totam excepturi recusandae illum aut porro doloribus itaque id reprehenderit?
-          Saepe porro voluptatum incidunt laborum, ipsa esse consequatur ab! Odio rem, fuga autem porro deserunt sit dolorum quibusdam natus ex consequuntur quo tempore laborum quaerat error in similique distinctio vero?</p>
+        <p>Looking for something specific to cook? You can start with an <Link to={'/categories/Starter'}>starter</Link>, continue with an exquisite <Link to={'/categories/Pasta'}>pasta</Link> dish, and finish with a <Link to={'/categories/Dessert'}>dessert</Link>. If you are a meat lover, you can check out our selection of <Link to={'/categories/Beef'}>beef</Link> dishes, or alternatively, take a look at our <Link to={'/categories/Vegan'}>vegan</Link> plates. There's something for everyone! There's even a <Link to={'/categories/Miscellaneous'}>miscellaneous</Link> section.</p>
       </Description>
 
       {loading && <Loader />}
