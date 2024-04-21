@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
 import Loader from '../../Components/Loader/Loader';
+import Description from '../../Components/Description/Description';
 
 // https://www.flaticon.com/packs/countrys-flags <-- FLAGS ICONS
 
@@ -28,6 +29,11 @@ const Areas = () => {
   return (
     <div>
       <h1>Areas</h1>
+
+      <Description>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, obcaecati! Dicta ipsa sit quam officiis placeat, qui minima. Distinctio eveniet totam excepturi recusandae illum aut porro doloribus itaque id reprehenderit?
+          Saepe porro voluptatum incidunt laborum, ipsa esse consequatur ab! Odio rem, fuga autem porro deserunt sit dolorum quibusdam natus ex consequuntur quo tempore laborum quaerat error in similique distinctio vero?</p>
+      </Description>
 
       {loading && <Loader />}
 

@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import GridContainer from '../../Components/Layout/Grid/GridContainer'
 import GridItem from '../../Components/Layout/Grid/GridItem'
 import Loader from '../../Components/Loader/Loader'
-
+import Description from '../../Components/Description/Description'
 
 const IngredientList = () => {
 
@@ -37,7 +37,10 @@ const IngredientList = () => {
   return (
     <div>
       <h1>{ingredient}</h1>
-      <p>{ingredientDescription}</p>
+
+      <Description>
+        <p>{ingredientDescription}</p>
+      </Description>
 
       {loading && <Loader />}
 

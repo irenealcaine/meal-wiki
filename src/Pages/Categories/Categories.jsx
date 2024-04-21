@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
 import Loader from '../../Components/Loader/Loader';
+import Description from '../../Components/Description/Description';
 
 const Categories = () => {
 
@@ -27,8 +28,11 @@ const Categories = () => {
   return (
     <div>
       <h1>Categories</h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius, ducimus eveniet? Voluptas dignissimos inventore eligendi numquam, reiciendis aliquam ducimus soluta saepe itaque est. Eveniet quis dolorem ipsam consequuntur molestias officia!
-        Ex officia distinctio labore ipsam eum rerum necessitatibus animi ut molestiae veritatis eos aliquam nam dolorum nostrum, reiciendis aspernatur deleniti perspiciatis praesentium dignissimos culpa dolores ullam fuga commodi itaque? Ad.</p>
+
+      <Description>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut, obcaecati! Dicta ipsa sit quam officiis placeat, qui minima. Distinctio eveniet totam excepturi recusandae illum aut porro doloribus itaque id reprehenderit?
+          Saepe porro voluptatum incidunt laborum, ipsa esse consequatur ab! Odio rem, fuga autem porro deserunt sit dolorum quibusdam natus ex consequuntur quo tempore laborum quaerat error in similique distinctio vero?</p>
+      </Description>
 
       {loading && <Loader />}
 
