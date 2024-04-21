@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
 import Loader from '../../Components/Loader/Loader';
+import Description from '../../Components/Description/Description';
 
 const CategoryList = () => {
 
@@ -35,7 +36,7 @@ const CategoryList = () => {
   return (
     <div>
       <h1>{category}</h1>
-      <p>{categoryDescription}</p>
+      <Description>{categoryDescription}</Description>
       {loading && <Loader />}
       <GridContainer columns={3}>
         {categoryList.map((categoryItem) => (
