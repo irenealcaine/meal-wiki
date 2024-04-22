@@ -20,6 +20,19 @@ const Home = () => {
       });
   }, [])
 
+  const renderIngredientList = () => {
+    const ingredientsList = [];
+    for (let i = 1; i <= 15; i++) {
+      const ingredient = meal[`strIngredient${i}`];
+      if (ingredient) {
+        ingredientsList.push(
+          <li key={i}> - {ingredient} </li>
+        );
+      }
+    }
+    return ingredientsList;
+  };
+
 
   return (
     <div className='home'>
@@ -27,9 +40,16 @@ const Home = () => {
       <Description description={descriptions.home} />
       <h2>A random meal you may like</h2>
       {loading && <Loader />}
-      <Link to={`/${meal.idMeal}`}>
-        <h3>{meal?.strMeal}</h3>
+      <Link to={`/${meal.idMeal}`} className='random-meal'>
         <img src={meal?.strMealThumb} alt={meal?.strMeal} />
+        <div className='meal-info'>
+          <h3>{meal?.strMeal}</h3>
+          <p><span>Area:</span> {meal?.strArea}</p>
+          <p><span>Category:</span> {meal?.strCategory}</p>
+          <span>Ingredients:</span>
+          <ul>{renderIngredientList()}</ul>
+
+        </div>
       </Link>
     </div>
   )
