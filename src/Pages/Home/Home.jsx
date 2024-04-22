@@ -6,12 +6,15 @@ import Loader from '../../Components/Loader/Loader';
 import Description from '../../Components/Description/Description';
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
+import Input from '../../Components/Input/Input';
 
 const Home = () => {
 
   const [meal, setMeal] = useState([])
   const [selectedLetter, setSelectedLetter] = useState('')
   const [mealByLetter, setMealByLetter] = useState('')
+  const [mealSearch, setMealSearch] = useState('')
+  const [mealSearchResult, setMealSearchResult] = useState([])
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
@@ -32,6 +35,21 @@ const Home = () => {
     }
   }, [selectedLetter])
 
+  const handleSearch = (event) => {
+    event.preventDefault();
+    console.log('a')
+
+    fetch(`${requests.mealByName}${mealSearch}`)
+      // .then((res) => console.log(res))
+      .then((res) => res.json())
+      .then((data) => {
+        setMealSearchResult(data.meals);
+        console.log(mealSearchResult)
+      });
+
+  }
+
+
   const renderIngredientList = () => {
     const ingredientsList = [];
     for (let i = 1; i <= 15; i++) {
@@ -48,7 +66,7 @@ const Home = () => {
   const letters = (() => {
     const caps = [...Array(26)].map((val, i) => String.fromCharCode(i + 65));
     return caps;
-  })();
+  })(); //constants file
 
 
 
@@ -58,6 +76,22 @@ const Home = () => {
       <h1>The meal wiki</h1>
       <Description description={descriptions.home} />
       <h2>What are you looking for?</h2>
+      <form onSubmit={handleSearch}>
+        <Input placeholder={'Search a meal...'} onChange={(e) => setMealSearch(e.target.value)} />
+      </form>
+      <GridContainer columns={4}>
+        {mealSearchResult &&
+          mealSearchResult.map((mealItem) => (
+            <Link key={mealItem?.idMeal} to={`/${mealItem?.idMeal}`}>
+              <GridItem>
+                <h3>{mealItem?.strMeal}</h3>
+                <img src={mealItem?.strMealThumb} alt={mealItem?.strMeal} />
+              </GridItem>
+            </Link>
+          ))
+
+        }
+      </GridContainer>
       <h2>A random meal you may like</h2>
       {loading && <Loader />}
       <Link to={`/${meal.idMeal}`} className='random-meal'>

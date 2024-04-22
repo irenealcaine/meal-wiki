@@ -1,0 +1,12 @@
+.text-input {
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  border: 2px solid var(--main);
+  padding: 5px 15px;
+  border-radius: 10px;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-size: larger;
+  margin: 5px 0 15px 0;
+}
