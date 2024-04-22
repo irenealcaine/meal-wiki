@@ -28,6 +28,7 @@ function App() {
             <Route path="/areas" element={<Areas />} />
             <Route path="/areas/:area" element={<AreaList />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/404" element={<NotFound />} />
           </Routes>
         </Layout>
       </BrowserRouter>

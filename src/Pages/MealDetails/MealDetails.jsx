@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './MealDetails.css'
 import { requests } from '../../Utils/constants'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import Loader from '../../Components/Loader/Loader'
 
 const MealDetails = () => {
+
+  const navigate = useNavigate()
 
   const { idMeal } = useParams()
 
@@ -21,6 +23,7 @@ const MealDetails = () => {
       })
       .catch((error) => {
         console.log(error)
+        navigate('/404')
       });
   }, [])
 

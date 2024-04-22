@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { requests } from '../../Utils/constants';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
 import Loader from '../../Components/Loader/Loader';
@@ -14,22 +14,25 @@ const CategoryList = () => {
   const [categoryDescription, setCategoryDescription] = useState('')
   const [loading, setLoading] = useState(false)
 
+  const navigate = useNavigate()
+
   useEffect(() => {
     setLoading(true)
     fetch(`${requests.filterByCategory}${category}`)
       .then((res) => res.json())
       .then((data) => {
         setCategoryList(data.meals);
-        setLoading(false)
       });
     fetch(`${requests.mealCategories}`)
       .then((res) => res.json())
       .then((data) => {
         const categoryJson = data.categories.filter(categoryItem => categoryItem.strCategory == category)
         setCategoryDescription(categoryJson[0].strCategoryDescription);
+        setLoading(false)
       })
       .catch((error) => {
         console.log(error)
+        navigate('/404')
       });
   }, [])
 
