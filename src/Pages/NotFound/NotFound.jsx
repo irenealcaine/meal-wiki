@@ -1,12 +1,18 @@
 import React from 'react'
 import Description from '../../Components/Description/Description'
 import { descriptions } from '../../Utils/constants'
+import Loader from '../../Components/Loader/Loader'
+import './NotFound.css'
 
 const NotFound = () => {
   return (
-    <div>
+    <div className='not-found'>
       <h1>404</h1>
-      <Description description={descriptions.notFound} />
+      <div className='message'>
+        <Loader />
+        <Description description={descriptions.notFound} />
+
+      </div>
     </div>
   )
 }

@@ -1,0 +1,20 @@
+.not-found{
+  margin: 20px;
+  .message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .loader{
+      width: fit-content;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .not-found{
+    .message{
+      flex-direction: column;
+    }
+  }
+}

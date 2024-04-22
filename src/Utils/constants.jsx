@@ -65,6 +65,6 @@ export const descriptions = {
     <p>Looking for something specific to cook? You can start with an <Link to={'/categories/Starter'}>starter</Link>, continue with an exquisite <Link to={'/categories/Pasta'}>pasta</Link> dish, and finish with a <Link to={'/categories/Dessert'}>dessert</Link>. If you are a meat lover, you can check out our selection of <Link to={'/categories/Beef'}>beef</Link> dishes, or alternatively, take a look at our <Link to={'/categories/Vegan'}>vegan</Link> plates. There's something for everyone! There's even a <Link to={'/categories/Miscellaneous'}>miscellaneous</Link> section.</p>,
 
   notFound:
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellat optio ipsa, ex nobis porro voluptate voluptates tenetur dicta quae soluta ea eum nisi fugiat veniam quas sequi maxime a quod!</p>
+    <p>Oops! Seems you've lost...  Please check the url and try again. If you continue to encounter problems, you can go to the <Link to={'/'}>home page.</Link></p>
 
 }
