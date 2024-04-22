@@ -4,7 +4,7 @@ import './Description.css'
 const Description = ({ description }) => {
 
   return (
-    <p className='description'>{description}</p>
+    <div className='description'>{description}</div>
   )
 }
 
