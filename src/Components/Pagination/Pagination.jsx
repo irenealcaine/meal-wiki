@@ -6,9 +6,17 @@ const Pagination = ({ itemsPerPage, currentPage, setCurrentPage, data }) => {
 
   const totalPages = Math.ceil(data.length / itemsPerPage)
   const pages = []
-  for (var i = 1; i <= totalPages; i++) {
-    pages.push(i);
+  for (let i = 1; i <= totalPages; i++) {
+    if (i === 1 || i === totalPages || i === currentPage || i === currentPage - 1 || i === currentPage + 1) {
+      pages.push(i);
+    } else if (i === currentPage - 2 || i === currentPage + 2) {
+      pages.push('...');
+    }
   }
+
+  const filteredPages = pages.filter((value, index, self) => {
+    return value !== '...' || (value === '...' && self[index - 1] !== '...');
+  });
 
   const previousPage = () => {
     setCurrentPage(currentPage - 1);
@@ -27,15 +35,17 @@ const Pagination = ({ itemsPerPage, currentPage, setCurrentPage, data }) => {
         </p>
       }
 
-      {pages.map((page) => (
+      {filteredPages.map((page, index) => (
         <p
-          key={page}
-          onClick={() => setCurrentPage(page)}
+          key={index}
+          onClick={() => typeof page === 'number' && setCurrentPage(page)}
           className={page === currentPage ? 'active' : ''}
-        >{page}</p>
+        >
+          {page}
+        </p>
       ))}
 
-      {currentPage < Math.ceil(data.length / itemsPerPage) &&
+      {currentPage < totalPages &&
         <p onClick={() => nextPage()}>
           <GrNext />
         </p>
