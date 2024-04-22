@@ -39,6 +39,26 @@
       max-width: 600px;
     }
   }
+  .letters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 15px;
+    margin: 10px;
+    div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      width: 30px;
+      height: 30px;
+      border-radius: 10rem;
+      border: 2px solid var(--main);
+      background-color: var(--secondary-transparent);
+      cursor: pointer;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
