@@ -57,6 +57,17 @@
       border: 2px solid var(--main);
       background-color: var(--secondary-transparent);
       cursor: pointer;
+      transition: var(--transition);
+
+      &:hover{
+        box-shadow: 0 0 5px var(--main);
+        border: 2px solid var(--secondary);
+
+      }
+
+      &.active{
+        background-color: var(--secondary);
+      }
     }
   }
 }

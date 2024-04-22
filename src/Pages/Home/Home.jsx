@@ -73,7 +73,11 @@ const Home = () => {
       </Link>
       <h2>Search by first letter</h2>
       <p className='letters'>{letters.map((letter) => (
-        <div key={letter} onClick={() => setSelectedLetter(letter)}>{letter}</div>
+        <div
+          key={letter}
+          onClick={() => setSelectedLetter(letter)}
+          className={`${selectedLetter === letter ? 'active' : ''}`}
+        >{letter}</div>
       ))}</p>
       <GridContainer columns={4}>
         {
