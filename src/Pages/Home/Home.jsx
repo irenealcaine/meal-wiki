@@ -1,8 +1,9 @@
 import './Home.css'
 import React, { useEffect, useState } from 'react'
-import { requests } from '../../Utils/constants';
+import { descriptions, requests } from '../../Utils/constants';
 import { Link } from 'react-router-dom';
 import Loader from '../../Components/Loader/Loader';
+import Description from '../../Components/Description/Description';
 
 const Home = () => {
 
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <div className='home'>
       <h1>Home</h1>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio quas asperiores quisquam perferendis? Magnam quae consectetur quia sint et deserunt qui. Distinctio ratione deleniti voluptate qui nesciunt dolor in soluta?</p>
+      <Description description={descriptions.home} />
       <h2>A random meal you may like</h2>
       {loading && <Loader />}
       <Link to={`/${meal.idMeal}`}>

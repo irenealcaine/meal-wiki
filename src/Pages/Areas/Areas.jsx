@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { requests } from '../../Utils/constants';
+import { descriptions, requests } from '../../Utils/constants';
 import { Link } from 'react-router-dom';
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
@@ -30,9 +30,8 @@ const Areas = () => {
     <div>
       <h1>Areas</h1>
 
-      <Description>
-        <p>Looking to explore different culinary regions through your cooking? Start your journey with robust <Link to={`/areas/American`}>American</Link> dishes, sail across to <Link to={`/areas/Italian`}>Italy</Link> for a pasta or risotto night, and then venture to <Link to={`/areas/Japanese`}>Japan</Link> for some exquisite sushi or ramen. Don’t forget to tour the wonderful flavors of <Link to={`/areas/Spanish`}>Spain</Link> with a traditional paella, and if you're feeling adventurous, give <Link to={`/areas/British`}>British</Link> cuisine a try with some classic fish and chips or a hearty pie. We have recipes and ingredients from all over the globe to satisfy every palate! Plus, there's even a section dedicated to international miscellany for the curious chef.</p>
-      </Description>
+      <Description description={descriptions.areas} />
+
 
       {loading && <Loader />}
 

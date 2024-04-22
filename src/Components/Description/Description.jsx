@@ -1,10 +1,10 @@
 import React from 'react'
 import './Description.css'
 
-const Description = ({ children }) => {
+const Description = ({ description }) => {
 
   return (
-    <p className='description'>{children}</p>
+    <p className='description'>{description}</p>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { requests } from '../../Utils/constants';
+import { descriptions, requests } from '../../Utils/constants';
 import { Link } from 'react-router-dom';
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
@@ -13,7 +13,7 @@ const Ingredients = () => {
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
 
-  const itemsPerPage = 50
+  const itemsPerPage = 40
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
@@ -34,9 +34,7 @@ const Ingredients = () => {
     <div>
       <h1>Ingredients</h1>
 
-      <Description>
-        <p>Are you trying to pinpoint specific ingredients for your next culinary creation? Start off with essentials like <Link to={'/ingredients/Onion'}>onions</Link>, move on to a hearty course with <Link to={'/ingredients/Beef'}>beef</Link>, and add a finishing touch with <Link to={'/ingredients/Avocado'}>avocado</Link> in your salads or <Link to={'/ingredients/Rice'}>rice</Link> as a side. If you're into poultry, consider incorporating <Link to={'/ingredients/Eggs'}>eggs</Link> into your dishes, or if you are a fan of vegetarian options, experiment with diverse recipes using <Link to={'/ingredients/Potatoes'}>potatoes</Link>. We cater to all preferences! Additionally, our pantry section includes a variety of other essential ingredients to spice up any meal.</p>
-      </Description>
+      <Description description={descriptions.ingredients} />
 
       {loading && <Loader />}
 
