@@ -34,7 +34,7 @@
       justify-content: center;
       flex-wrap: wrap;
       row-gap: 10px;
-      column-gap: 15px;
+      column-gap: 20px;
       width: 100%;
       max-width: 600px;
     }

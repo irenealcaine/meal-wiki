@@ -26,7 +26,7 @@ const Home = () => {
       const ingredient = meal[`strIngredient${i}`];
       if (ingredient) {
         ingredientsList.push(
-          <li key={i}> - {ingredient} </li>
+          <li key={i}>{ingredient}</li>
         );
       }
     }
