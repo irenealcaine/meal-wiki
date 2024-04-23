@@ -54,15 +54,19 @@ const Ingredients = () => {
       />
 
       <GridContainer columns={4}>
-        {filteredIngredients.slice(startIndex, endIndex).map((ingredient) => (
-          <Link key={ingredient.idIngredient} to={`/ingredients/${ingredient.strIngredient}`}>
-            <GridItem>
-              <h2>{ingredient.strIngredient}</h2>
-              <img src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`} alt={ingredient.strIngredient} />
-              {/* <p>{ingredient.strDescription}</p> */}
-            </GridItem>
-          </Link>
-        ))}
+        {
+          filteredIngredients.length > 0 ? (
+            filteredIngredients.slice(startIndex, endIndex).map((ingredient) => (
+              <Link key={ingredient.idIngredient} to={`/ingredients/${ingredient.strIngredient}`}>
+                <GridItem>
+                  <h2>{ingredient.strIngredient}</h2>
+                  <img src={`https://www.themealdb.com/images/ingredients/${ingredient.strIngredient}.png`} alt={ingredient.strIngredient} />
+                  {/* <p>{ingredient.strDescription}</p> */}
+                </GridItem>
+              </Link>
+            ))
+          ) : (<p>There's no ingredients named like this.</p>)
+        }
       </GridContainer>
 
       <Pagination
