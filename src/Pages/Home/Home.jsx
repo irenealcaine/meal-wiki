@@ -25,7 +25,9 @@ const Home = () => {
         setMeal(data.meals[0]);
         setLoading(false)
       });
+  }, [])
 
+  useEffect(() => {
     if (selectedLetter) {
       fetch(`${requests.mealByFirstLetter}${selectedLetter}`)
         .then((res) => res.json())
@@ -35,20 +37,15 @@ const Home = () => {
     }
   }, [selectedLetter])
 
-  const handleSearch = (event) => {
-    event.preventDefault();
-    console.log('a')
-
-    fetch(`${requests.mealByName}${mealSearch}`)
-      // .then((res) => console.log(res))
-      .then((res) => res.json())
-      .then((data) => {
-        setMealSearchResult(data.meals);
-        console.log(mealSearchResult)
-      });
-
-  }
-
+  useEffect(() => {
+    if (mealSearch) {
+      fetch(`${requests.mealByName}${mealSearch}`)
+        .then((res) => res.json())
+        .then((data) => {
+          setMealSearchResult(data.meals);
+        });
+    }
+  }, [mealSearch])
 
   const renderIngredientList = () => {
     const ingredientsList = [];
@@ -69,8 +66,6 @@ const Home = () => {
   })(); //constants file
 
 
-
-
   return (
     <div className='home'>
       <h1>The meal wiki</h1>
@@ -79,19 +74,23 @@ const Home = () => {
       <hr />
 
       <h2>What are you looking for?</h2>
-      <form onSubmit={handleSearch}>
-        <Input placeholder={'Search a meal...'} onChange={(e) => setMealSearch(e.target.value)} />
-      </form>
+      <Input placeholder={'Search a meal...'} onChange={(e) => setMealSearch(e.target.value)} />
       <GridContainer columns={5}>
-        {mealSearchResult &&
-          mealSearchResult.map((mealItem) => (
-            <Link key={mealItem?.idMeal} to={`/${mealItem?.idMeal}`}>
-              <GridItem>
-                <h3>{mealItem?.strMeal}</h3>
-                <img src={mealItem?.strMealThumb} alt={mealItem?.strMeal} />
-              </GridItem>
-            </Link>
-          ))
+        {
+          mealSearch ? (
+            mealSearchResult && mealSearchResult.length > 0 ? (
+              mealSearchResult.map((mealItem) => (
+                <Link key={mealItem?.idMeal} to={`/${mealItem?.idMeal}`}>
+                  <GridItem>
+                    <h3>{mealItem?.strMeal}</h3>
+                    <img src={mealItem?.strMealThumb} alt={mealItem?.strMeal} />
+                  </GridItem>
+                </Link>
+              ))
+            ) : (
+              <p>There's no meal named like this.</p>
+            )
+          ) : null
         }
       </GridContainer>
 
@@ -107,7 +106,6 @@ const Home = () => {
           <p><span>Category:</span> {meal?.strCategory}</p>
           <span>Ingredients:</span>
           <ul>{renderIngredientList()}</ul>
-
         </div>
       </Link>
 
