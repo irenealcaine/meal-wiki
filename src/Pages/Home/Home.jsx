@@ -75,6 +75,9 @@ const Home = () => {
     <div className='home'>
       <h1>The meal wiki</h1>
       <Description description={descriptions.home} />
+
+      <hr />
+
       <h2>What are you looking for?</h2>
       <form onSubmit={handleSearch}>
         <Input placeholder={'Search a meal...'} onChange={(e) => setMealSearch(e.target.value)} />
@@ -89,9 +92,11 @@ const Home = () => {
               </GridItem>
             </Link>
           ))
-
         }
       </GridContainer>
+
+      <hr />
+
       <h2>A random meal you may like</h2>
       {loading && <Loader />}
       <Link to={`/${meal.idMeal}`} className='random-meal'>
@@ -105,6 +110,9 @@ const Home = () => {
 
         </div>
       </Link>
+
+      <hr />
+
       <h2>Search by first letter</h2>
       <p className='letters'>{letters.map((letter) => (
         <span
