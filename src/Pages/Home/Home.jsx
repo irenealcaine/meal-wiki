@@ -82,7 +82,7 @@ const Home = () => {
       <form onSubmit={handleSearch}>
         <Input placeholder={'Search a meal...'} onChange={(e) => setMealSearch(e.target.value)} />
       </form>
-      <GridContainer columns={4}>
+      <GridContainer columns={5}>
         {mealSearchResult &&
           mealSearchResult.map((mealItem) => (
             <Link key={mealItem?.idMeal} to={`/${mealItem?.idMeal}`}>
@@ -121,7 +121,7 @@ const Home = () => {
           className={`${selectedLetter === letter ? 'active' : ''}`}
         >{letter}</span>
       ))}</p>
-      <GridContainer columns={4}>
+      <GridContainer columns={5}>
         {
           selectedLetter ? (
             mealByLetter && mealByLetter.length > 0 ? (
