@@ -1,5 +1,4 @@
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
-import { IoMailOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 export const requests = {
@@ -52,8 +51,7 @@ export const socialMedia = [
 
 export const descriptions = {
   home:
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia placeat vel perspiciatis ducimus, asperiores, libero vero nobis quibusdam a inventore totam porro voluptate, unde excepturi perferendis. Autem soluta libero recusandae!
-      Tempore recusandae illo quasi maiores. Esse pariatur dolores aliquam? Suscipit consectetur, sapiente ratione aliquam ad consequuntur mollitia quasi veritatis nihil consequatur fugit facilis, doloremque provident illo. Architecto enim reiciendis praesentium.</p>,
+    <p>Welcome to The Meal Wiki! Inspire your cooking journey, whether you are a home cook or a professional chef. Dive into our diverse sections where you can explore dishes based on specific <Link to={'/ingredients'}>ingredients</Link>, culinary <Link to={'/categories'}>categories</Link>, and <Link to={`/areas`}>regional cuisines</Link> from around the globe.</p>,
 
   ingredients:
     <p>Are you trying to pinpoint specific ingredients for your next culinary creation? Start off with essentials like <Link to={'/ingredients/Onion'}>onions</Link>, move on to a hearty course with <Link to={'/ingredients/Beef'}>beef</Link>, and add a finishing touch with <Link to={'/ingredients/Avocado'}>avocado</Link> in your salads or <Link to={'/ingredients/Rice'}>rice</Link> as a side. If you're into poultry, consider incorporating <Link to={'/ingredients/Eggs'}>eggs</Link> into your dishes, or if you are a fan of vegetarian options, experiment with diverse recipes using <Link to={'/ingredients/Potatoes'}>potatoes</Link>. We cater to all preferences! Additionally, our pantry section includes a variety of other essential ingredients to spice up any meal.</p>,
