@@ -6,16 +6,14 @@ import GridItem from '../../Components/Layout/Grid/GridItem';
 import Loader from '../../Components/Loader/Loader';
 import Description from '../../Components/Description/Description';
 import Pagination from '../../Components/Pagination/Pagination';
+import Input from '../../Components/Input/Input';
 
 const Ingredients = () => {
 
   const [ingredients, setIngredients] = useState([])
   const [loading, setLoading] = useState(false)
   const [currentPage, setCurrentPage] = useState(1)
-
-  const itemsPerPage = 40
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
+  const [searchIngredient, setSearchIngredient] = useState('')
 
   useEffect(() => {
     setLoading(true)
@@ -30,11 +28,21 @@ const Ingredients = () => {
       });
   }, [])
 
+  const filteredIngredients = ingredients.filter(ingredient => ingredient.strIngredient.toLowerCase().includes(searchIngredient.toLowerCase()))
+  console.log(filteredIngredients)
+
+  const itemsPerPage = 40
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
   return (
     <div>
       <h1>Ingredients</h1>
 
       <Description description={descriptions.ingredients} />
+
+      <h2>Looking for some ingredient?</h2>
+      <Input placeholder={'Search a ingredient...'} onChange={(e) => setSearchIngredient(e.target.value)} />
 
       {loading && <Loader />}
 
@@ -42,11 +50,11 @@ const Ingredients = () => {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         itemsPerPage={itemsPerPage}
-        data={ingredients}
+        data={filteredIngredients}
       />
 
       <GridContainer columns={4}>
-        {ingredients.slice(startIndex, endIndex).map((ingredient) => (
+        {filteredIngredients.slice(startIndex, endIndex).map((ingredient) => (
           <Link key={ingredient.idIngredient} to={`/ingredients/${ingredient.strIngredient}`}>
             <GridItem>
               <h2>{ingredient.strIngredient}</h2>
@@ -61,7 +69,7 @@ const Ingredients = () => {
         currentPage={currentPage}
         setCurrentPage={setCurrentPage}
         itemsPerPage={itemsPerPage}
-        data={ingredients}
+        data={filteredIngredients}
       />
     </div>
   )
