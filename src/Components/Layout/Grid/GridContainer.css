@@ -1,6 +1,7 @@
 .grid-container{
   display: grid;
   gap: 50px;
+  align-items: end;
 
   &.columns-3{
     grid-template-columns: repeat(3, 1fr);
@@ -39,10 +40,16 @@
 
     &.columns-4{
       grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
 
     &.columns-5{
       grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+
+      h3{
+        font-size: 20px;
+      }
     }
   }
 }
