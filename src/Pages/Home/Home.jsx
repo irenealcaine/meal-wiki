@@ -7,6 +7,7 @@ import Description from '../../Components/Description/Description';
 import GridContainer from '../../Components/Layout/Grid/GridContainer';
 import GridItem from '../../Components/Layout/Grid/GridItem';
 import Input from '../../Components/Input/Input';
+import logo from '../../assets/images/logo512.png'
 
 const Home = () => {
 
@@ -68,8 +69,14 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <h1>The meal wiki</h1>
-      <Description description={descriptions.home} />
+      <div className='hero'>
+        <div className='hero-info'>
+          <h1>The meal wiki</h1>
+          <Description description={descriptions.home} />
+        </div>
+        <img src={logo} alt="logo" />
+      </div>
+
 
       <hr />
 

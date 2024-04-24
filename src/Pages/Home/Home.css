@@ -1,4 +1,16 @@
 .home{
+  .hero{
+    display: flex;
+    align-items: flex-start;
+    .description{
+      width: 80%;
+    }
+    img{
+      width: 250px;
+      height: auto;
+      animation: bounce 2s linear infinite;
+    }
+  }
   .random-meal{
     display: flex;
     align-items: flex-start;
@@ -72,8 +84,38 @@
   }
 }
 
+@keyframes bounce {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+
+  }
+  50% {
+    transform: rotate(0deg);
+
+  }
+  75% {
+    transform: rotate(-5deg);
+
+  }
+  100% {
+    transform: rotate(0deg);
+
+  }
+
+
+}
+
 @media screen and (max-width: 768px) {
   .home{
+    .hero{
+      flex-direction: column;
+      img{
+        display: none;
+      }
+    }
     .random-meal{
       margin: 0px;
       flex-direction: column;
