@@ -11,7 +11,14 @@ const Footer = () => {
         <ul>
           {socialMedia.map((socialMediaItem) => (
             <li key={socialMediaItem.name}>
-              <Link to={socialMediaItem.link} rel="noopener noreferrer" target="_blank">{socialMediaItem.logo}</Link>
+              <Link
+                to={socialMediaItem.link}
+                rel="noopener noreferrer"
+                target="_blank"
+                aria-label={socialMediaItem.label}
+              >
+                {socialMediaItem.logo}
+              </Link>
             </li>
           ))}
         </ul>

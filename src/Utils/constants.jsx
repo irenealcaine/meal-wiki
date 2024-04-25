@@ -37,15 +37,18 @@ export const socialMedia = [
   {
     name: 'Gmail',
     logo: <FiMail />,
-    link: 'mailto:irenealcainealvarez@gmail.com?Subject=Charlemos!'
+    link: 'mailto:irenealcainealvarez@gmail.com?Subject=Charlemos!',
+    label: 'My Gmail'
   }, {
     name: 'LinkedIn',
     logo: <FiLinkedin />,
-    link: 'https://www.linkedin.com/in/irenealcaine/'
+    link: 'https://www.linkedin.com/in/irenealcaine/',
+    label: 'My LinkedIn profile'
   }, {
     name: 'GitHub',
     logo: <FiGithub />,
-    link: 'https://github.com/irenealcaine'
+    link: 'https://github.com/irenealcaine',
+    label: 'My GitHub profile'
   },
 ]
 
