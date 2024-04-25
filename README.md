@@ -28,5 +28,7 @@ Si te gustaría contribuir a este proyecto, por favor sigue los siguientes pasos
 5. Crea un pull request para que revise tus cambios
 
 ## Créditos
-- Este proyecto está realizado con la versión gratuita de la API de [TheMealDB](https://www.themealdb.com/)
+- Este proyecto está realizado con la versión gratuita de la API de [TheMealDB](https://www.themealdb.com/).
+- Iconos de [React Icons](https://react-icons.github.io/react-icons/).
+- Fuentes de [Google Fonts](https://fonts.google.com/).
 - Diseñado y desarrollado por mí, utilicé React para hacerlo posible.
