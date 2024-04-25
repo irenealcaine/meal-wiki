@@ -8,7 +8,7 @@
     img{
       width: 250px;
       height: auto;
-      animation: bounce 2s linear infinite;
+      animation: bounce 5s linear infinite;
     }
   }
   .random-meal{
@@ -86,19 +86,24 @@
 
 @keyframes bounce {
   0% {
-    transform: rotate(0deg);
+    /* transform: rotate(0deg); */
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px var(--main));
   }
   25% {
-    transform: rotate(5deg);
-  }
-  50% {
-    transform: rotate(0deg);
+    /* transform: rotate(5deg); */
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 0px var(--main));
   }
   75% {
-    transform: rotate(-5deg);
+    /* transform: rotate(-5deg); */
+    transform: scale(.95);
+    filter: drop-shadow(0 0 8px var(--main));
   }
   100% {
-    transform: rotate(0deg);
+    /* transform: rotate(0deg); */
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px var(--main));
   }
 }
 
