@@ -1,5 +1,6 @@
 @import url('./variables.css');
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Patrick+Hand&display=swap'); */
+
 @font-face {
   font-family: 'Montserrat';
   src: url('./assets/fonts/Montserrat-Regular.ttf') format('truetype');
