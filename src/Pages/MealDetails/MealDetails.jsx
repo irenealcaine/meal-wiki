@@ -50,16 +50,16 @@ const MealDetails = () => {
   return (
     <div className='meal-details'>
       {loading && <Loader />}
-      <div className='meal-principal'>
+      <section className='meal-principal'>
         <h1>{meal.strMeal}</h1>
         <img src={meal.strMealThumb} alt={meal.strMeal} />
         <div className='meal-source top'>
           <a href={meal.strSource}>Source</a>
           <a href={meal.strYoutube}>Youtube video</a>
         </div>
-      </div>
+      </section>
 
-      <div className='meal-aside'>
+      <section className='meal-aside'>
         <div className='meal-info'>
           <p>Area: <Link to={`/areas/${meal.strArea}`}>{meal.strArea}</Link></p>
           <p>Category: <Link to={`/categories/${meal.strCategory}`}>{meal.strCategory}</Link></p>
@@ -81,7 +81,7 @@ const MealDetails = () => {
           <a href={meal.strYoutube}>Youtube video</a>
         </div>
 
-      </div>
+      </section>
 
     </div>
   )

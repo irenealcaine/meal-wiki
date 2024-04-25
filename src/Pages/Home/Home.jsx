@@ -69,13 +69,13 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <div className='hero'>
+      <section className='hero'>
         <div className='hero-info'>
           <h1>The meal wiki</h1>
           <Description description={descriptions.home} />
         </div>
         <img src={logo} alt="logo" />
-      </div>
+      </section>
 
 
       <hr />
